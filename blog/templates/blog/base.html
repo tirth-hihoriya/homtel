@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html >
-<head>
+  <head>
 
     
     <!-- Required meta tags -->
@@ -23,14 +23,24 @@
     {% else %}
     <title>HOMTEL</title>
     {% endif %}
-    
+    <style>
+        .bg-steel {
+    background-color: #3c1053;
+  }
+  header a {
+  font-family: var(--Rubik);
+  font-size: 1.2em;
+  color: whitesmoke;
+}
+    </style>
 </head>
+
 <body>
     <!-- navigation bar -->
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'blog-home' %} ">Django Blog</a>
+            <a class="navbar-brand mr-4" href="{% url 'blog-home' %} ">HOMTEL</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,7 +53,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Hostel</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -55,13 +65,10 @@
         </div>
         </nav>
     </header>
-    
 
     <main role="main" class="container">
         <div class="row">
-          {% block content %}
-          <!--
-             <div class="col-md-8">
+          <div class="col-md-8">
             {% if messages %}
               {% for message in messages %}
               <div class="alert alert-{{ message.tags }}">
@@ -69,11 +76,8 @@
               </div>
               {% endfor %}
             {% endif %}
-
-            
-          </div> 
-        -->
-          {% endblock %}
+            {% block content %}{% endblock %}
+          </div>
           <div class="col-md-4">
             <div class="content-section">
               <h3>Our Sidebar</h3>
@@ -91,46 +95,45 @@
       </main>
 
 
-<footer>
-    <div class="container-fluid p-0">
-      <div class="row text-left">
-        <div class="col-md-5 col-sm-5">
-          <h4 class="text-light">About us</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maxime ea similique illum corrupti</p>
-          <p class="pt-4 text-muted">Copyright ©2020 All rights reserved <br>
-            <span> |  This is developed by Tirth Hihoriya and Sunidhi Tandel  |</span>
-          </p>
-        </div>
-        <div class="col-md-5 col-sm-12">
-          <h4 class="text-light">Newsletter</h4>
-          <p class="text-muted">Stay Updated</p>
-          <form class="form-inline">
-            <div class="col pl-0">
-              <div class="input-group pr-5">
-                <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-arrow-right"></i>
+      <footer>
+        <div class="container-fluid p-0">
+          <div class="row text-left">
+            <div class="col-md-5 col-sm-5">
+              <h4 class="text-light">About us</h4>
+              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maxime ea similique illum corrupti</p>
+              <p class="pt-4 text-muted">Copyright ©2020 All rights reserved <br>
+                <span> |  This is developed by Tirth Hihoriya and Sunidhi Tandel  |</span>
+              </p>
+            </div>
+            <div class="col-md-5 col-sm-12">
+              <h4 class="text-light">Newsletter</h4>
+              <p class="text-muted">Stay Updated</p>
+              <form class="form-inline">
+                <div class="col pl-0">
+                  <div class="input-group pr-5">
+                    <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fas fa-arrow-right"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <h4 class="text-light">Follow Us</h4>
+              <p class="text-muted">Let us be social</p>
+              <div class="column text-light">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <h4 class="text-light">Follow Us</h4>
-          <p class="text-muted">Let us be social</p>
-          <div class="column text-light">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-youtube"></i>
           </div>
         </div>
-      </div>
-    </div>
-  </footer>
-
+      </footer>
 
 
     <!-- Optional JavaScript -->

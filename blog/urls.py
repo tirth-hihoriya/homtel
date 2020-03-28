@@ -24,4 +24,4 @@ urlpatterns = [
 # TemplateDoesNotExist at /
 
 # blog/post_list.html
-    # <app>/<model>_<viewtype>.html 
+    #<app>/<model>_<viewtype>.html
