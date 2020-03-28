@@ -12,10 +12,16 @@ body {
     margin: 0;
   }
   
+
+
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #3c1053;
   }
-  
+  .mheader{
+    color:blue;
+    /* border: red 1px solid; */
+    margin-top:-37px;
+  }
   .site-header .navbar-nav .nav-link {
     color: #cbd5db;
   }
@@ -82,11 +88,6 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
-
-
-
-
-
 
 
 

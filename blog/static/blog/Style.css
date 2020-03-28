@@ -9,7 +9,7 @@ section {
 }
 
 :root {
-  --Sniglet-font: "Sniglet", cursive;
+  --Rubik-font: "Rubik", cursive;
   --Rubik: "Rubik", cursive;
   --Patua: "Patua One", cursive;
   --Lobster: "lobster", cursive;
@@ -19,8 +19,10 @@ section {
   --light-gray: rgba(255, 255, 255, 0.877);
 }
 
+
+
 header a {
-  font-family: var(--Sniglet-font);
+  font-family: var(--Rubik);
   font-size: 0.9em;
   color: whitesmoke;
 }
@@ -54,7 +56,7 @@ header .nav-item:last-child {
 }
 
 header .nav-item {
-  padding: 0.9em;
+  padding: 0.2em;
 }
 
 header .navbar-brand {
@@ -79,7 +81,7 @@ header .row .col-md-5 img {
 }
 
 header {
-  background: #ff512f;
+  background: #3c1053;
   /* fallback for old browsers */
   background: var(--bggradient);
   
