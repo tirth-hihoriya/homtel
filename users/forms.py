@@ -1,5 +1,7 @@
 from django import forms
+from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
@@ -40,21 +42,21 @@ class UserRegisterForm(UserCreationForm):
     country = forms.CharField(
         label="Country", widget=forms.Select(choices=COUNTRY_CHOICES)
     )
-    role = forms.CharField(
-        label="Select your role", widget=forms.RadioSelect(choices=ROLE_CHOICES)
+    user_role = forms.CharField(
+        label="Are you a Seller or a User?", widget=forms.Select(choices=ROLE_CHOICES)
     )
     age = forms.IntegerField(max_value=100, min_value=17)
 
     class Meta:
         model = User
         fields = [
+            "user_role",
             "first_name",
             "last_name",
             "city",
             "state",
             "country",
             "age",
-            "role",
             "username",
             "email",
             "password1",
