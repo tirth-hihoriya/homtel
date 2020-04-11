@@ -33,6 +33,18 @@ class Post(models.Model):
     city = models.CharField(max_length=20, choices=CITY_CHOICES, default = "UNK") 
     rating = models.CharField(max_length=1, choices=RATING_CHOICES, default = "UNK")
 
+    breakfast = models.BooleanField(default=False)
+    lunch = models.BooleanField(default=False)
+    dinner = models.BooleanField(default=False)
+    
+    transportation = models.BooleanField(default=False)
+    cctv = models.BooleanField(default=False)
+    fridge = models.BooleanField(default=False)
+    washing_machine = models.BooleanField(default=False)
+    geyser = models.BooleanField(default=False)
+    ac = models.BooleanField(default=False)
+
+
 
     date_posted = models.DateTimeField(
         default=timezone.now
