@@ -1,2 +1,2 @@
-"# HOMTEL" 
+# HOMTEL
 > Hostel Information Portal
