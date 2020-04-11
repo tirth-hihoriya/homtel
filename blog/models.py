@@ -7,44 +7,36 @@ from django.urls import reverse
 class Post(models.Model):
 
     CITY_CHOICES = [
-    ("gandhinagar", "Gandhinagar"),
-    ("ahmedabad", "Ahmedabad"),
-    ("bhavnagar", "Bhavnagar"),
+        ("gandhinagar", "Gandhinagar"),
+        ("ahmedabad", "Ahmedabad"),
+        ("bhavnagar", "Bhavnagar"),
     ]
 
     AREA_CHOICES = [
-    ("gota", "Gota"),
-    ("vaishnodevi", "Vaishnodevi"),
-    ("godhrej", "Godhrej Garden City"),
+        ("gota", "Gota"),
+        ("vaishnodevi", "Vaishnodevi"),
+        ("godhrej", "Godhrej Garden City"),
     ]
 
-    RATING_CHOICES = [
-    ("1", "1"),
-    ("2", "2"),
-    ("3", "3"),
-    ("4", "4"),
-    ("5", "5")
-    ]
+    RATING_CHOICES = [("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5")]
 
     hostel_name = models.CharField(max_length=20)
-    address = models.CharField(max_length=100, default = "UNK")
+    address = models.CharField(max_length=100, default="UNK")
 
-    area = models.CharField(max_length=20, choices=AREA_CHOICES, default = "UNK") 
-    city = models.CharField(max_length=20, choices=CITY_CHOICES, default = "UNK") 
-    rating = models.CharField(max_length=1, choices=RATING_CHOICES, default = "UNK")
+    area = models.CharField(max_length=20, choices=AREA_CHOICES, default="UNK")
+    city = models.CharField(max_length=20, choices=CITY_CHOICES, default="UNK")
+    rating = models.CharField(max_length=1, choices=RATING_CHOICES, default="UNK")
 
     breakfast = models.BooleanField(default=False)
     lunch = models.BooleanField(default=False)
     dinner = models.BooleanField(default=False)
-    
+
     transportation = models.BooleanField(default=False)
     cctv = models.BooleanField(default=False)
     fridge = models.BooleanField(default=False)
     washing_machine = models.BooleanField(default=False)
     geyser = models.BooleanField(default=False)
     ac = models.BooleanField(default=False)
-
-
 
     date_posted = models.DateTimeField(
         default=timezone.now

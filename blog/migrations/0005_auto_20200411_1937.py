@@ -6,53 +6,41 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0004_auto_20200411_1910'),
+        ("blog", "0004_auto_20200411_1910"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='ac',
+            model_name="post", name="ac", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="breakfast",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='post',
-            name='breakfast',
+            model_name="post", name="cctv", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post", name="dinner", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post", name="fridge", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post", name="geyser", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post", name="lunch", field=models.BooleanField(default=False),
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="transportation",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='post',
-            name='cctv',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='dinner',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='fridge',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='geyser',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='lunch',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='transportation',
-            field=models.BooleanField(default=False),
-        ),
-        migrations.AddField(
-            model_name='post',
-            name='washing_machine',
+            model_name="post",
+            name="washing_machine",
             field=models.BooleanField(default=False),
         ),
     ]

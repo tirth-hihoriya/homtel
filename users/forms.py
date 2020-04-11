@@ -44,12 +44,15 @@ class UserRegisterForm(UserCreationForm):
         label="Country", widget=forms.Select(choices=COUNTRY_CHOICES)
     )
     user_role = forms.CharField(
-        label="Are you a Seller/Hostel_Owner or a Coustomer/Student?", widget=forms.Select(choices=ROLE_CHOICES)
+        label="Are you a Seller/Hostel_Owner or a Coustomer/Student?",
+        widget=forms.Select(choices=ROLE_CHOICES),
     )
+
     class DateInput(forms.DateInput):
-        input_type = 'date'
-    dob = forms.DateField(label="Date of Birth",widget = DateInput())
-    
+        input_type = "date"
+
+    dob = forms.DateField(label="Date of Birth", widget=DateInput())
+
     class Meta:
         model = User
         fields = [
@@ -80,12 +83,21 @@ class UserUpdateForm(forms.ModelForm):
     country = forms.CharField(
         label="Country", widget=forms.Select(choices=COUNTRY_CHOICES)
     )
+
     class Meta:
         model = User
-        fields = ["username", "email","first_name","last_name","city","state","country"]
+        fields = [
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "city",
+            "state",
+            "country",
+        ]
 
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ["image" ]
+        fields = ["image"]

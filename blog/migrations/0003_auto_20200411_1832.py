@@ -6,18 +6,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_auto_20200411_1739'),
+        ("blog", "0002_auto_20200411_1739"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='area',
-            field=models.CharField(choices=[('gota', 'Gota'), ('vaishnodevi', 'Vaishnodevi'), ('godhrej', 'Godhrej Garden City')], default='UNK', max_length=20),
+            model_name="post",
+            name="area",
+            field=models.CharField(
+                choices=[
+                    ("gota", "Gota"),
+                    ("vaishnodevi", "Vaishnodevi"),
+                    ("godhrej", "Godhrej Garden City"),
+                ],
+                default="UNK",
+                max_length=20,
+            ),
         ),
         migrations.AddField(
-            model_name='post',
-            name='city',
-            field=models.CharField(choices=[('gandhinagar', 'Gandhinagar'), ('ahmedabad', 'Ahmedabad'), ('bhavnagar', 'Bhavnagar')], default='UNK', max_length=20),
+            model_name="post",
+            name="city",
+            field=models.CharField(
+                choices=[
+                    ("gandhinagar", "Gandhinagar"),
+                    ("ahmedabad", "Ahmedabad"),
+                    ("bhavnagar", "Bhavnagar"),
+                ],
+                default="UNK",
+                max_length=20,
+            ),
         ),
     ]
