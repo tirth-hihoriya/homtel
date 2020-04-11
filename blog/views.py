@@ -17,13 +17,13 @@ from .models import Post
 # posts = [
 #     {
 #         'author': 'Tirth',
-#         'title' : 'Blog Post 1',
+#         'hostel_name' : 'Blog Post 1',
 #         'content' : 'First post content',
 #         'date_posted': 'March 21, 2020'
 #     },
 #     {
 #         'author': 'Rohit',
-#         'title' : 'Blog Post 2',
+#         'hostel_name' : 'Blog Post 2',
 #         'content' : 'Second post content',
 #         'date_posted': 'March 23, 2099'
 #     }
@@ -64,7 +64,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ["title", "content"]
+    fields = ["hostel_name", "content"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -73,7 +73,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ["title", "content"]
+    fields = ["hostel_name", "content"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user

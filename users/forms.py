@@ -21,11 +21,11 @@ STATE_CHOICES = [
 COUNTRY_CHOICES = [
     ("desi", "India"),
     ("mate", "Australia"),
-    ("sunidhi", "Mars"),
+    ("sunidhi", "USA"),
 ]
 
 ROLE_CHOICES = [
-    ("user", "User"),
+    ("coustomer", "Customer"),
     ("seller", "Seller"),
 ]
 
@@ -44,7 +44,7 @@ class UserRegisterForm(UserCreationForm):
         label="Country", widget=forms.Select(choices=COUNTRY_CHOICES)
     )
     user_role = forms.CharField(
-        label="Are you a Seller or a User?", widget=forms.Select(choices=ROLE_CHOICES)
+        label="Are you a Seller/Hostel_Owner or a Coustomer/Student?", widget=forms.Select(choices=ROLE_CHOICES)
     )
     class DateInput(forms.DateInput):
         input_type = 'date'
