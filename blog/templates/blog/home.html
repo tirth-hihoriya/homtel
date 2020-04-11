@@ -35,6 +35,83 @@
   color: whitesmoke;
 }
 
+
+
+
+
+
+.row-card{
+            font-family: 'Ubuntu', sans-serif;
+            background:#c8cdd4;
+            font-weight: bold;
+        }
+       
+        /* .main{
+            background-color: #dde1e7;
+            box-shadow: -3px -3px 5px #ffffff70, 3px 3px 5px #00000080;
+        } */
+        .divcard{
+            background-color: hsl(0, 0%, 100%);
+        }
+        /* .textcard{
+            font-size: 20px;
+            margin-top:33px ;
+        } */
+        .col-md-6{
+            margin-bottom: 50px;
+            /* border: 2px solid red; */
+        }
+        .checked {
+          color: orange;
+        }
+
+        .container-card{
+            margin-top: 8%;
+        }
+        
+        .card2 .card-text2 {
+    padding: -0.5rem 3rem;
+    color: var(--light-black);
+}
+        .inner{
+            overflow: hidden;
+        }
+        
+        .inner img{
+            transition: all 1.5s ease;
+        }
+        
+        .inner:hover img{
+            transform: scale(1.5);
+        }
+        .h_name{
+            font-size: 20px;
+            margin-right: 60px;
+            /* float: left; */
+        }
+        .area{
+            margin-right: 90px;
+        }
+        /* .share{
+            margin-left: 80px;
+        } */
+
+        
+        
+
+          .www{
+            width: 300px;
+            /* background-color: green; */
+          }
+
+          .xxx{
+          
+            width: 300px;
+          }
+          .yyy{
+            width: 700px;
+            /* background-color: black; */
+          }
     </style>
 
 
@@ -108,22 +185,67 @@
          
            
 
+
+
+
+              
+ 
+
+
+
+    
 <!-- home -->
+<div class="container nomargin">
+  <div class="yyy row nomargin">  
             {% for post in posts %}
-        <article class="media content-section">
-            <img src="{{ post.author.profile.image.url }}" alt="profile_pic" class="rounded-circle article-img">
-            <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-            </div>
+           
+            <div class="xxx container divcard container-card ">
+              <div class="www row row-card divcard ">
+                  <div class="border col-md-6 row-card divcard ">
+                      <div class="card shadow divcard " style="width: 20rem; height:30rem;">
+                          <div class="inner divcard ">
+                              <!-- <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Card image cap"> -->
+                              <img src="{{ post.author.profile.image.url }}" alt="profile_pic" class="card-img-top">    
+                          </div>
+                          <div class="card-body divcard">
+                              <a href="#" class="btn btn-dark h_name">Prime Hostel</a>
+                              <a href="#" class="btn btn-warning">1.5 km</a> from Nirma
+                            
+                            <p class="card-text2"><br>
+                              Address : Sun Complex, b/h sun temple
+                              <br><br>
+                              Area :
+                              <a href="#" class="btn btn-primary area">Gota </a>
+                              Rating :  
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star"></span>
+        
+                            </p>
+                          
+                            <br>
+        
+                            <a href="#" class="btn btn-success">Contact :  91099 - 44234</a>
+                             <a href="#" class="btn btn-dark">Deepakbhai</a>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+
             
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            
-            <p class="article-content">{{ post.content }}</p>
-            </div>
-        </article>
+          
     {% endfor %}
+
+  </div>
+</div>
+
+
+
+
+
 
 
     {% if is_paginated %}
