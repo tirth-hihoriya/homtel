@@ -69,6 +69,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         "address",
         "area",
         "city",
+        "contact",
         "rating",
         "breakfast",
         "lunch",
@@ -92,6 +93,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         "address",
         "area",
         "city",
+        "contact",
         "rating",
         "breakfast",
         "lunch",
@@ -101,6 +103,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         "fridge",
         "washing_machine",
         "geyser",
+
     ]
 
     def form_valid(self, form):

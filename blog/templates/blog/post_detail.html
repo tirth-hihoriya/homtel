@@ -6,6 +6,7 @@
         <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+
             <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
             {% if object.author == user %}
             <div>
@@ -86,6 +87,9 @@
                         {% endif %}
                     </p>
                 </details>
+        <p class="article-content">Address:{{ object.area}}&nbsp{{ object.city}}</p>
+        <p class="article-content">Average Rating :{{ object.rating}}</p>
+        <p class="article-content">Contact : {{ object.phone_no}}</p>
         </div>
     </article>
     

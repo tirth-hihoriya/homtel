@@ -158,12 +158,16 @@
                 Live  &nbsp;Happily  &nbsp;and &nbsp; Enjoy &nbsp; the  &nbsp;Life
               </p>
               <br>
+              {% if user.is_authenticated %}
+                Welcome to Our Website!
+              {% else %}
               <button class="btn btn-light px-5 py-2 primary-btn">
                 Log In
               </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button class="btn btn-light px-5 py-2 primary-btn">
                 Register
               </button>
+              {% endif %}
             </div>
            
           </div>
@@ -212,18 +216,18 @@
                               <a href="#" class="btn btn-warning">1.5 km</a> from Nirma
                             
                             <p class="card-text2"><br>
-                              Address : Sun Complex, b/h sun temple
+                              Address : {{post.address}}
                               <br><br>
                               Area :
                               <a href="#" class="btn btn-primary area">{{ post.area }}</a>
-                              Rating :  
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-        
+                              Rating :
+                              {% with ''|center:5 as range %}
+                              {% for _ in range %}
+                                <span class="fa fa-star checked"></span>
+                                {%endfor%}
+                              {% endwith %}
                             </p>
+                            
                           
                             <br>
         

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 from django.urls import reverse
 
@@ -25,6 +26,7 @@ class Post(models.Model):
 
     area = models.CharField(max_length=20, choices=AREA_CHOICES, default="UNK")
     city = models.CharField(max_length=20, choices=CITY_CHOICES, default="UNK")
+    contact = PhoneNumberField(null=True, blank=True, unique=True)
     rating = models.CharField(max_length=1, choices=RATING_CHOICES, default="UNK")
 
     breakfast = models.BooleanField(default=False)
