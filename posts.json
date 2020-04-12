@@ -4,43 +4,43 @@
     {
         "hostel_name": "Prime HOstel",
         "address": "My first updated post!\r\n\r\nThis is exciting!",
-        "user_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Ravi Hostel",
         "address": "This is a post from a different user...",
-        "user_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Top 5 ",
         "address": "Te melius apeirian postulant cum, labitur admodu",
-        "user_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Sublime",
         "address": "Ea vix dico modus voluptatibus, mel iudico suav",
-        "user_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
         
     },
     {
         "hostel_name": "Best Python",
         "address": "Elit addressiones nam no, sea ut consul adipiscing. Etiam velit ei usu, sonet clita ",
-        "user_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Flask vs Django",
         "address": "Ei dicta apeirian deterruisset eam, cu offendit invenire pri, cu possim vivendo vix? Nam nihil ev",
-        "user_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Ravi Hostel",
         "address": "This is a post from a different user...",
-        "user_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     },
     {
         "hostel_name": "Top 5 ",
         "address": "Te melius apeirian postulant cum, labitur admodum cu eos! Tollit equidem constituto ut has. Et per ponderum sadipsci",
-        "user_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+        "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
     }
  
 ]

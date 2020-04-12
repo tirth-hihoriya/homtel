@@ -13,13 +13,79 @@
                 <a href="{% url 'post-delete' object.id %}" class="btn btn-danger btn-sm mt-1 mb-1" >Delete</a>
             </div>
             {% endif %}
-
-
-
-            
         </div>
         <h2 class="article-title">{{ object.hostel_name }}</h2>
         <p class="article-content">{{ object.content }}</p>
+        <div class="article-specs">
+            <details>
+            <summary>Food Details</summary>
+                <p> Breakfast:
+                    {% if object.breakfast %}
+                    Provided
+                    {% else %}
+                    Not Provided
+                    {% endif %}
+                </p>
+                <p> Lunch:
+                    {% if object.lunch %}
+                    Provided
+                    {% else %}
+                    Not Provided
+                    {% endif %}
+                </p>
+                <p> Dinner:
+                    {% if object.dinner %}
+                    Provided
+                    {% else %}
+                    Not Provided
+                    {% endif %}
+                </p>
+            </details>
+            <details>
+                <summary>Utilities Provided</summary>
+                    <p> Transportation:
+                        {% if object.transportation %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                    <p> CCTV:
+                        {% if object.cctv %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                    <p> Fridge:
+                        {% if object.fridge %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                    <p> Washing Machine:
+                        {% if object.washing_machine %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                    <p> Geyser:
+                        {% if object.geyser %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                    <p> AC:
+                        {% if object.ac %}
+                        Provided
+                        {% else %}
+                        Not Provided
+                        {% endif %}
+                    </p>
+                </details>
         </div>
     </article>
     
