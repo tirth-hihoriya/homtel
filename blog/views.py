@@ -85,6 +85,20 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class RoomCategoryView(DetailView):
+    model = Post.RoomCategory
+
+class RoomCategoryCreateView(LoginRequiredMixin, CreateView):
+    model = Post.RoomCategory
+    fields = [
+        "sharing",
+        "price"
+    ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
@@ -103,7 +117,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         "fridge",
         "washing_machine",
         "geyser",
-
     ]
 
     def form_valid(self, form):

@@ -87,10 +87,13 @@
                         {% endif %}
                     </p>
                 </details>
-        <p class="article-content">Address: {{ object.area}},&nbsp{{ object.city}}</p>
-        <p class="article-content">Average Rating: {{ object.rating}}</p>
+        <p class="article-content">Address: {{ object.area}},&nbsp;{{ object.city }}</p>
+        <p class="article-content">Average Rating: {{ object.rating }}</p>
         <p class="article-content">Contact: {{ user.contact }}</p>
+        {% if object.author == user %}
+        <a href="{% url 'room-category-create' %}">New Room Category</a>
+        {% endif %}
         </div>
     </article>
-    
+
 {% endblock content %}

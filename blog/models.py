@@ -44,6 +44,18 @@ class Post(models.Model):
     )  # only when post was created use--> auto_now_add=True
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    room_categories = []
+
+    class RoomCategory(models.Model):
+        sharing = models.IntegerField(primary_key=True, default=1)
+        price = models.DecimalField(default=50000, max_digits=6, decimal_places=4)
+
+        def __str__(self):
+            return ""
+
+        def get_absolute_url(self):
+            return reverse("post-detail", kwargs={"pk": self.pk})
+
     def __str__(self):
         return self.hostel_name
 
