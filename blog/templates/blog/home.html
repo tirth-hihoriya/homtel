@@ -150,7 +150,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                {% if user.user_role == "seller" %}
+                {% if user.user_role == seller %}
                   <a class="nav-item nav-link" href="{% url 'post-create' %}">New Hostel</a>
                 {% endif %}
                   <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
