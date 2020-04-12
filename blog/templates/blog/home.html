@@ -216,7 +216,7 @@
                               <a href="#" class="btn btn-warning">1.5 km</a> from Nirma
                             
                             <p class="card-text2"><br>
-                              Address : {{post.address}}
+                              Address : {{ post.address }}
                               <br><br>
                               Area :
                               <a href="#" class="btn btn-primary area">{{ post.area }}</a>
@@ -224,7 +224,7 @@
                               {% with ''|center:5 as range %}
                               {% for _ in range %}
                                 <span class="fa fa-star checked"></span>
-                                {%endfor%}
+                              {% endfor %}
                               {% endwith %}
                             </p>
                             
