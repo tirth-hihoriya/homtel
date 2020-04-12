@@ -212,18 +212,18 @@
                               <a href="#" class="btn btn-warning">1.5 km</a> from Nirma
                             
                             <p class="card-text2"><br>
-                              Address : Sun Complex, b/h sun temple
+                              Address : {{post.address}}
                               <br><br>
                               Area :
                               <a href="#" class="btn btn-primary area">{{ post.area }}</a>
-                              Rating :  
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-        
+                              Rating :
+                              {% with ''|center:5 as range %}
+                              {% for _ in range %}
+                                {{forloop.counter}}
+                                <span class="fa fa-star checked"></span>
+                              {% endwith %}
                             </p>
+                            
                           
                             <br>
         
