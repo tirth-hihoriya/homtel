@@ -43,7 +43,7 @@ class PostListView(ListView):
     template_name = "blog/home.html"  # <app>/<model>_<viewtype>.html
     context_object_name = "posts"
     ordering = ["-date_posted"]  # - sigh for decending
-    paginate_by = 5
+    paginate_by = 9
 
 
 class UserPostListView(ListView):
@@ -51,7 +51,7 @@ class UserPostListView(ListView):
     template_name = "blog/user_posts.html"  # <app>/<model>_<viewtype>.html
     context_object_name = "posts"
     # ordering = ['-date_posted'] # - sigh for decending   # comented b'cod it is written in `get_query_set` method
-    paginate_by = 5
+    paginate_by = 9
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get("username"))
