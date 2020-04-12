@@ -25,7 +25,7 @@ class Post(models.Model):
 
     area = models.CharField(max_length=20, choices=AREA_CHOICES, default="UNK")
     city = models.CharField(max_length=20, choices=CITY_CHOICES, default="UNK")
-    contact = models.CharField(max_length=10, default="UNK")
+    # contact = models.CharField(max_length=10, default="UNK")
     rating = models.CharField(max_length=1, choices=RATING_CHOICES, default="UNK")
 
     breakfast = models.BooleanField(default=False)

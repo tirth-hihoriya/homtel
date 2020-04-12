@@ -47,6 +47,7 @@ class UserRegisterForm(UserCreationForm):
         label="Are you a Seller/Hostel_Owner or a Coustomer/Student?",
         widget=forms.Select(choices=ROLE_CHOICES),
     )
+    contact = forms.CharField(label="Phone No.", max_length=13)
 
     class DateInput(forms.DateInput):
         input_type = "date"
@@ -65,6 +66,7 @@ class UserRegisterForm(UserCreationForm):
             "dob",
             "username",
             "email",
+            "contact",
             "password1",
             "password2",
         ]

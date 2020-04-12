@@ -20,21 +20,21 @@
         <div class="article-specs">
             <details>
             <summary>Food Details</summary>
-                <p> Breakfast:
+                <p> Breakfast:&nbsp;
                     {% if object.breakfast %}
                     Provided
                     {% else %}
                     Not Provided
                     {% endif %}
                 </p>
-                <p> Lunch:
+                <p> Lunch:&nbsp;
                     {% if object.lunch %}
                     Provided
                     {% else %}
                     Not Provided
                     {% endif %}
                 </p>
-                <p> Dinner:
+                <p> Dinner:&nbsp;
                     {% if object.dinner %}
                     Provided
                     {% else %}
@@ -44,42 +44,42 @@
             </details>
             <details>
                 <summary>Utilities Provided</summary>
-                    <p> Transportation:
+                    <p> Transportation:&nbsp;
                         {% if object.transportation %}
                         Provided
                         {% else %}
                         Not Provided
                         {% endif %}
                     </p>
-                    <p> CCTV:
+                    <p> CCTV:&nbsp;
                         {% if object.cctv %}
                         Provided
                         {% else %}
                         Not Provided
                         {% endif %}
                     </p>
-                    <p> Fridge:
+                    <p> Fridge:&nbsp;
                         {% if object.fridge %}
                         Provided
                         {% else %}
                         Not Provided
                         {% endif %}
                     </p>
-                    <p> Washing Machine:
+                    <p> Washing Machine:&nbsp;
                         {% if object.washing_machine %}
                         Provided
                         {% else %}
                         Not Provided
                         {% endif %}
                     </p>
-                    <p> Geyser:
+                    <p> Geyser:&nbsp;
                         {% if object.geyser %}
                         Provided
                         {% else %}
                         Not Provided
                         {% endif %}
                     </p>
-                    <p> AC:
+                    <p> AC:&nbsp;
                         {% if object.ac %}
                         Provided
                         {% else %}
@@ -87,9 +87,9 @@
                         {% endif %}
                     </p>
                 </details>
-        <p class="article-content">Address:{{ object.area}}&nbsp{{ object.city}}</p>
-        <p class="article-content">Average Rating :{{ object.rating}}</p>
-        <p class="article-content">Contact : {{ object.phone_no}}</p>
+        <p class="article-content">Address: {{ object.area}},&nbsp{{ object.city}}</p>
+        <p class="article-content">Average Rating: {{ object.rating}}</p>
+        <p class="article-content">Contact: {{ user.contact }}</p>
         </div>
     </article>
     
