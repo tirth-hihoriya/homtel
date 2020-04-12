@@ -158,12 +158,16 @@
                 Live  &nbsp;Happily  &nbsp;and &nbsp; Enjoy &nbsp; the  &nbsp;Life
               </p>
               <br>
+              {% if user.is_authenticated %}
+                Welcome to Our Website!
+              {% else %}
               <button class="btn btn-light px-5 py-2 primary-btn">
                 Log In
               </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button class="btn btn-light px-5 py-2 primary-btn">
                 Register
               </button>
+              {% endif %}
             </div>
            
           </div>
@@ -219,8 +223,8 @@
                               Rating :
                               {% with ''|center:5 as range %}
                               {% for _ in range %}
-                                {{forloop.counter}}
                                 <span class="fa fa-star checked"></span>
+                                {%endfor%}
                               {% endwith %}
                             </p>
                             
