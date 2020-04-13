@@ -33,7 +33,8 @@ from .models import Post
 # Create your views here.
 def home(request):
     context = {
-        "posts": Post.objects.all(),
+        "posts": Post.objects.first(),
+        # "posts": Post.objects.all().filter(hostel_name__icontains="Ravi"),
     }
     return render(request, "blog/home.html", context)
 
