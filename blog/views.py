@@ -9,32 +9,49 @@ from django.views.generic import (
     DeleteView,
 )
 from .models import Post
+from .filters import PostFilter
 
 # from django.http import HttpResponse
 # def about(request):
 #     return HttpResponse("<h1>Tirth's Blog About</h1>")
 
 # posts = [
-#     {
-#         'author': 'Tirth',
-#         'hostel_name' : 'Blog Post 1',
-#         'content' : 'First post content',
-#         'date_posted': 'March 21, 2020'
+# {
+#         "hostel_name": "Prime HOstel",
+#         "address": "My first updated post!\r\n\r\nThis is exciting!",
+#         "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
 #     },
 #     {
-#         'author': 'Rohit',
-#         'hostel_name' : 'Blog Post 2',
-#         'content' : 'Second post content',
-#         'date_posted': 'March 23, 2099'
+#         "hostel_name": "Ravi Hostel",
+#         "address": "This is a post from a different user...",
+#         "author_id": 2,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
+#     },
+#     {
+#         "hostel_name": "Top 5 ",
+#         "address": "Te melius apeirian postulant cum, labitur admodu",
+#         "author_id": 1,"area":"Gota","city":"Ahmedabad","rating":"2","breakfast":"True","lunch":"False","dinner":"True","transportation":"True","cctv":"False","fridge":"False","washing_machine":"True","geyser":"True","ac":"True"
 #     }
 # ]
 
 
-# Create your views here.
 def home(request):
+    posts_list = Post.objects.all()
+    query = request.GET.get('q')
+    # area = request.GET.get('a')
+    # city = request.GET.get('c')
+    if query:
+        posts_list = Post.objects.filter(hostel_name__icontains=query).order_by("date_posted")
+    # if area:
+    #     posts_list = posts_list.filter(area__icontains=area).order_by("date_posted")
+    # if city:
+    #     posts_list = posts_list.filter(city__icontains=city).order_by("date_posted")
+    
+    myFilter = PostFilter(request.GET, queryset=posts_list)
+    posts_list = myFilter.qs
     context = {
-        "posts": Post.objects.first(),
-        # "posts": Post.objects.all().filter(hostel_name__icontains="Ravi"),
+        "posts": posts_list,
+        'myFilter':myFilter,
+       
     }
     return render(request, "blog/home.html", context)
 

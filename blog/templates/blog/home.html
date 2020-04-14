@@ -223,21 +223,31 @@
               {% endfor %}
             {% endif %}
          
-           
+              
+            <br>    
+
+              <form action="" method="GET">
+               
+                 
+                {{myFilter.form}}
+                <input type="submit" class="btn btn-secondary"  value="Filter" >
+              </form>
 
 
-
+            
+          <br><br><br>
         
 
-
+              <form action="" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search the Hostel,Area,City">
+              <input type="text" class="form-control" name='q' placeholder="Search the Hostel">
               <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">
+                <button class="btn btn-secondary" type="submit">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
             </div>
+          </form> 
 
 
 
@@ -264,11 +274,12 @@
                               Area :
                               <a href="#" class="btn btn-primary area">{{ post.area }}</a></p>
                               <p>Rating :
-                              {% with ''|center:5 as range %}
+                              {% with ''|center:4 as range %}
                               {% for _ in range %}
                                 <span class="fa fa-star checked"></span>
                               {% endfor %}
                               {% endwith %}
+                              <span class="fa fa-star "></span>
                             </p>
                             
                           
@@ -282,6 +293,7 @@
                 </div>
               </div>
 
+              
             
           
     {% endfor %}
@@ -336,13 +348,14 @@
         </div>
       </main>
 
+      <br><br><br><br>
 
       <footer>
         <div class="container-fluid p-0">
           <div class="row text-left">
             <div class="col-md-5 col-sm-5">
               <h4 class="text-light">About us</h4>
-              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maxime ea similique illum corrupti</p>
+              <p class="text-muted">Hostel information Portal </p>
               <p class="pt-4 text-muted">Copyright ©2020 All rights reserved <br>
                 <span> |  This is developed by Tirth Hihoriya, Tirth Patel, and Sunidhi Tandel  |</span>
               </p>

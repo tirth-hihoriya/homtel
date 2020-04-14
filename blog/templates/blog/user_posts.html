@@ -41,11 +41,12 @@
                                     Area :
                                     <a href="#" class="btn btn-primary area">{{ post.area }}</a></p>
                                     <p>Rating :
-                                    {% with ''|center:5 as range %}
+                                    {% with ''|center:4 as range %}
                                     {% for _ in range %}
                                       <span class="fa fa-star checked"></span>
                                     {% endfor %}
                                     {% endwith %}
+                                    <span class="fa fa-star checked"></span>
                                   </p>
                                   
                                 
