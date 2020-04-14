@@ -55,7 +55,7 @@ class Post(models.Model):
 
 
 class RoomCategory(models.Model):
-        sharing = models.IntegerField(primary_key=True, default=1)
+        sharing = models.IntegerField(default=1)
         price = models.DecimalField(default=50000.0000, max_digits=12, decimal_places=4)
 
         def __str__(self):
