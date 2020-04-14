@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",  # added in v6
     "blog.apps.BlogConfig",  # added
     "crispy_forms",  # added
+    "django_filters",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
