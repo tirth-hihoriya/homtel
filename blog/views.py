@@ -109,6 +109,7 @@ class RoomCategoryView(DetailView):
 class RoomCategoryCreateView(LoginRequiredMixin, CreateView):
     model = RoomCategory
     fields = [
+        "hostel",
         "sharing",
         "price"
     ]

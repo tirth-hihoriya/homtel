@@ -3,8 +3,9 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
+import random
 
-# Create your models here.
+
 class Post(models.Model):
 
     CITY_CHOICES = [
@@ -55,11 +56,13 @@ class Post(models.Model):
 
 
 class RoomCategory(models.Model):
-        sharing = models.IntegerField(default=1)
-        price = models.DecimalField(default=50000.0000, max_digits=12, decimal_places=4)
+    id = models.IntegerField(primary_key=True, default=random.randint(0, 1000))
+    hostel = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
+    sharing = models.IntegerField(default=1)
+    price = models.DecimalField(default=50000.0000, max_digits=12, decimal_places=4)
 
-        def __str__(self):
-            return ""
+    def __str__(self):
+        return "oy"
 
-        def get_absolute_url(self):
-            return reverse("post-detail", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("post-detail", kwargs={"sharing": self.sharing})
