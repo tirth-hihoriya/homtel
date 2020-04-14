@@ -46,18 +46,19 @@ class Post(models.Model):
 
     room_categories = []
 
-    class RoomCategory(models.Model):
+    def __str__(self):
+        return self.hostel_name
+
+    def get_absolute_url(self):
+        return reverse("post-detail", kwargs={"pk": self.pk})
+
+
+class RoomCategory(models.Model):
         sharing = models.IntegerField(primary_key=True, default=1)
-        price = models.DecimalField(default=50000, max_digits=6, decimal_places=4)
+        price = models.DecimalField(default=50000.0000, max_digits=12, decimal_places=4)
 
         def __str__(self):
             return ""
 
         def get_absolute_url(self):
             return reverse("post-detail", kwargs={"pk": self.pk})
-
-    def __str__(self):
-        return self.hostel_name
-
-    def get_absolute_url(self):
-        return reverse("post-detail", kwargs={"pk": self.pk})

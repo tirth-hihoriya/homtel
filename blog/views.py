@@ -8,7 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Post
+from .models import Post, RoomCategory
 
 # from django.http import HttpResponse
 # def about(request):
@@ -86,10 +86,10 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class RoomCategoryView(DetailView):
-    model = Post.RoomCategory
+    model = RoomCategory
 
 class RoomCategoryCreateView(LoginRequiredMixin, CreateView):
-    model = Post.RoomCategory
+    model = RoomCategory
     fields = [
         "sharing",
         "price"
