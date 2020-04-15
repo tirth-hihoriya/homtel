@@ -18,81 +18,136 @@
         <h2 class="article-title">{{ object.hostel_name }}</h2>
         <p class="article-content">{{ object.content }}</p>
         <div class="article-specs">
+            <br><hr>
             <details>
-            <summary>Food Details</summary>
+            <summary><button type="button" class="btn btn-warning">Food Details</button></summary><br>
                 <p> Breakfast:&nbsp;
                     {% if object.breakfast %}
-                    Provided
+                    <button type="button" class="btn btn-success">Provided</button>
                     {% else %}
-                    Not Provided
+                    <button type="button" class="btn btn-danger">Not Provided</button>
                     {% endif %}
                 </p>
-                <p> Lunch:&nbsp;
+                <p> Lunch:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     {% if object.lunch %}
-                    Provided
+                    <button type="button" class="btn btn-success">Provided</button>
                     {% else %}
-                    Not Provided
+                    <button type="button" class="btn btn-danger">Not Provided</button>
                     {% endif %}
                 </p>
-                <p> Dinner:&nbsp;
+                <p> Dinner:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     {% if object.dinner %}
-                    Provided
+                    <button type="button" class="btn btn-success">Provided</button>
                     {% else %}
-                    Not Provided
+                    <button type="button" class="btn btn-danger">Not Provided</button>
                     {% endif %}
                 </p>
             </details>
+            <hr><br>
             <details>
-                <summary>Utilities Provided</summary>
-                    <p> Transportation:&nbsp;
+                <summary><button type="button" class="btn btn-warning">Utilities Provided</button></summary><br>
+                    <p> Transportation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {% if object.transportation %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
-                    <p> CCTV:&nbsp;
+                    <p> CCTV:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {% if object.cctv %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
-                    <p> Fridge:&nbsp;
+                    <p> Fridge:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {% if object.fridge %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
-                    <p> Washing Machine:&nbsp;
+                    <p> Washing Machine:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                         {% if object.washing_machine %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
-                    <p> Geyser:&nbsp;
+                    <p> Geyser:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {% if object.geyser %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
-                    <p> AC:&nbsp;
+                    <p> AC:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {% if object.ac %}
-                        Provided
+                        <button type="button" class="btn btn-success">Provided</button>
                         {% else %}
-                        Not Provided
+                        <button type="button" class="btn btn-danger">Not Provided</button>
                         {% endif %}
                     </p>
                 </details>
-        <p class="article-content">Address: {{ object.area}},&nbsp;{{ object.city }}</p>
-        <p class="article-content">Average Rating: {{ object.rating }}</p>
-        <p class="article-content">Contact: {{ user.contact }}</p>
+                <hr><br>
+        
+        <p class="article-content">Area:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   <button type="button" class="btn btn-primary">{{ object.area}}</button></p>
+        <p class="article-content">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-secondary">{{ object.city}}</button></p>
+        <p class="article-content">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-light">{{ object.address}}</button></p>
+        <p class="article-content">Avg Rating:&nbsp; <button type="button" class="btn btn-info">4</button></p>
+        <p class="article-content">Contact:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button type="button" class="btn btn-dark"> {{ object.contact }}</button></p>
         {% if object.author == user %}
         <a href="{% url 'room-category-create' %}">New Room Category</a>
         {% endif %}
+
+
+
+        {% for rc in posts %}
+           
+            <div class="xxx container divcard container-card ">
+              <div class="www row row-card divcard ">
+                  <div class="border col-md-6 row-card divcard ">
+                      <div class="card shadow divcard " style="width: 20rem; height:30rem;">
+                          <div class="inner divcard ">
+                              <!-- <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Card image cap"> -->
+                              <img src="{{ post.author.profile.image.url }}" alt="profile_pic" class="card-img-top">    
+                          </div>
+                          <div class="card-body divcard">
+                            <p><a href="{% url 'post-detail' post.id %}" class="btn btn-dark h_name">{{ post.hostel_name }}</a></p>
+                            
+                            <p class="card-text2"><br>
+                              Address : {{ post.address }}
+                              <br><br>
+                              Area :
+                              <a href="#" class="btn btn-primary area">{{ post.area }}</a></p>
+                              <p>Rating :
+                              {% with ''|center:4 as range %}
+                              {% for _ in range %}
+                                <span class="fa fa-star checked"></span>
+                              {% endfor %}
+                              {% endwith %}
+                              <span class="fa fa-star "></span>
+                            </p>
+                            
+                          
+                            <br>
+        
+                            <a href="#" class="btn btn-success">Contact :  91099 - 44234</a>
+                             <a href="{% url 'user-posts' post.author.username %}" class="btn btn-dark">{{ post.author }}</a>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+
+              
+            
+          
+    {% endfor %}
+
+
+
+
         </div>
     </article>
 
