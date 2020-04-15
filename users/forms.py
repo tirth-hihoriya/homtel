@@ -25,8 +25,8 @@ COUNTRY_CHOICES = [
 ]
 
 ROLE_CHOICES = [
-    ("coustomer", "Customer"),
-    ("seller", "Seller"),
+    ("coustomer", "customer"),
+    ("seller", "seller"),
 ]
 
 

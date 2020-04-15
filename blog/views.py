@@ -8,7 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Post
+from .models import Post, RoomCategory
 from .filters import PostFilter
 
 # from django.http import HttpResponse
@@ -76,9 +76,21 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by("-date_posted")
 
 
-class PostDetailView(DetailView):
-    model = Post
-
+def post_detail_view(request,*args,**kwargs):
+    h = Post.objects.get(id=kwargs['pk'])
+    # if request.method == 'GET':
+    #     query = request.GET.get('q')
+    #     submitbutton = request.GET.get('submit')
+    #     if query is not None:
+    #         h = Book.objects.get(id=kwargs['pk'])
+    # p=Post.objects.filter(hostel_name="tirth's home")
+    room_cat = RoomCategory.objects.filter(hostel_id=h.id)
+    context = {
+        'object' : h,
+        'posts' : room_cat
+    }
+    template_name = "blog/post_detail.html"
+    return render(request, "blog/post_detail.html", context)
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -103,6 +115,21 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class RoomCategoryView(DetailView):
+    model = RoomCategory
+
+class RoomCategoryCreateView(LoginRequiredMixin, CreateView):
+    model = RoomCategory
+    fields = [
+        "hostel",
+        "sharing",
+        "price"
+    ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
@@ -121,7 +148,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         "fridge",
         "washing_machine",
         "geyser",
-
     ]
 
     def form_valid(self, form):
