@@ -7,13 +7,15 @@ import phonenumber_field.modelfields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0008_post_contact'),
+        ("blog", "0008_post_contact"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='contact',
-            field=phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128, null=True, region=None, unique=True),
+            model_name="post",
+            name="contact",
+            field=phonenumber_field.modelfields.PhoneNumberField(
+                blank=True, max_length=128, null=True, region=None, unique=True
+            ),
         ),
     ]

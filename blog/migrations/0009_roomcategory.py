@@ -6,15 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0008_post_contact'),
+        ("blog", "0008_post_contact"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='RoomCategory',
+            name="RoomCategory",
             fields=[
-                ('Sharing', models.IntegerField(default=1, primary_key=True, serialize=False)),
-                ('Price', models.DecimalField(decimal_places=4, default=50000, max_digits=6)),
+                (
+                    "Sharing",
+                    models.IntegerField(default=1, primary_key=True, serialize=False),
+                ),
+                (
+                    "Price",
+                    models.DecimalField(decimal_places=4, default=50000, max_digits=6),
+                ),
             ],
         ),
     ]

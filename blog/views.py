@@ -36,22 +36,23 @@ from .filters import PostFilter
 
 def home(request):
     posts_list = Post.objects.all()
-    query = request.GET.get('q')
+    query = request.GET.get("q")
     # area = request.GET.get('a')
     # city = request.GET.get('c')
     if query:
-        posts_list = Post.objects.filter(hostel_name__icontains=query).order_by("date_posted")
+        posts_list = Post.objects.filter(hostel_name__icontains=query).order_by(
+            "date_posted"
+        )
     # if area:
     #     posts_list = posts_list.filter(area__icontains=area).order_by("date_posted")
     # if city:
     #     posts_list = posts_list.filter(city__icontains=city).order_by("date_posted")
-    
+
     myFilter = PostFilter(request.GET, queryset=posts_list)
     posts_list = myFilter.qs
     context = {
         "posts": posts_list,
-        'myFilter':myFilter,
-       
+        "myFilter": myFilter,
     }
     return render(request, "blog/home.html", context)
 
@@ -76,8 +77,8 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by("-date_posted")
 
 
-def post_detail_view(request,*args,**kwargs):
-    h = Post.objects.get(id=kwargs['pk'])
+def post_detail_view(request, *args, **kwargs):
+    h = Post.objects.get(id=kwargs["pk"])
     # if request.method == 'GET':
     #     query = request.GET.get('q')
     #     submitbutton = request.GET.get('submit')
@@ -85,12 +86,10 @@ def post_detail_view(request,*args,**kwargs):
     #         h = Book.objects.get(id=kwargs['pk'])
     # p=Post.objects.filter(hostel_name="tirth's home")
     room_cat = RoomCategory.objects.filter(hostel_id=h.id)
-    context = {
-        'object' : h,
-        'posts' : room_cat
-    }
+    context = {"object": h, "posts": room_cat}
     template_name = "blog/post_detail.html"
     return render(request, "blog/post_detail.html", context)
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -115,16 +114,14 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
 class RoomCategoryView(DetailView):
     model = RoomCategory
 
+
 class RoomCategoryCreateView(LoginRequiredMixin, CreateView):
     model = RoomCategory
-    fields = [
-        "hostel",
-        "sharing",
-        "price"
-    ]
+    fields = ["hostel", "sharing", "price"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user

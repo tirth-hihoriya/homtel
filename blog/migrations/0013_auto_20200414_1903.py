@@ -7,23 +7,25 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0012_merge_20200414_1749'),
+        ("blog", "0012_merge_20200414_1749"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='roomcategory',
-            name='hostel',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.Post'),
+            model_name="roomcategory",
+            name="hostel",
+            field=models.ForeignKey(
+                null=True, on_delete=django.db.models.deletion.CASCADE, to="blog.Post"
+            ),
         ),
         migrations.AddField(
-            model_name='roomcategory',
-            name='id',
+            model_name="roomcategory",
+            name="id",
             field=models.IntegerField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='roomcategory',
-            name='sharing',
+            model_name="roomcategory",
+            name="sharing",
             field=models.IntegerField(default=1),
         ),
     ]
