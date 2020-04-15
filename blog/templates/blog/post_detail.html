@@ -100,49 +100,12 @@
         <a href="{% url 'room-category-create' %}">New Room Category</a>
         {% endif %}
 
+    {% for rc in posts %}
 
+    <p> Sharing: {{ rc.sharing }} </p>
+    <p> Price: {{ rc.price }} </p>
+    <br>
 
-        {% for rc in posts %}
-           
-            <div class="xxx container divcard container-card ">
-              <div class="www row row-card divcard ">
-                  <div class="border col-md-6 row-card divcard ">
-                      <div class="card shadow divcard " style="width: 20rem; height:30rem;">
-                          <div class="inner divcard ">
-                              <!-- <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Card image cap"> -->
-                              <img src="{{ post.author.profile.image.url }}" alt="profile_pic" class="card-img-top">    
-                          </div>
-                          <div class="card-body divcard">
-                            <p><a href="{% url 'post-detail' post.id %}" class="btn btn-dark h_name">{{ post.hostel_name }}</a></p>
-                            
-                            <p class="card-text2"><br>
-                              Address : {{ post.address }}
-                              <br><br>
-                              Area :
-                              <a href="#" class="btn btn-primary area">{{ post.area }}</a></p>
-                              <p>Rating :
-                              {% with ''|center:4 as range %}
-                              {% for _ in range %}
-                                <span class="fa fa-star checked"></span>
-                              {% endfor %}
-                              {% endwith %}
-                              <span class="fa fa-star "></span>
-                            </p>
-                            
-                          
-                            <br>
-        
-                            <a href="#" class="btn btn-success">Contact :  91099 - 44234</a>
-                             <a href="{% url 'user-posts' post.author.username %}" class="btn btn-dark">{{ post.author }}</a>
-                          </div>
-                        </div>
-                  </div>
-                </div>
-              </div>
-
-              
-            
-          
     {% endfor %}
 
 

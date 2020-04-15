@@ -46,8 +46,6 @@ class Post(models.Model):
     )  # only when post was created use--> auto_now_add=True
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    room_categories = []
-
     def __str__(self):
         return self.hostel_name
 
@@ -64,4 +62,4 @@ class RoomCategory(models.Model):
         return f"{self.post.hostel_name}"
 
     def get_absolute_url(self):
-        return reverse("")
+        return reverse("post-detail", kwargs={"pk": self.hostel.pk})
