@@ -1,0 +1,126 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+    <article class="media content-section" >
+        <img src="{{ object.author.profile.image.url }}" alt="profile_pic" class="rounded-circle article-img">
+        <div class="media-body">
+        <div class="article-metadata"style="text-align: center;">
+            <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+
+            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+            {% if object.author == user %}
+            <div>
+                <a href="{% url 'post-update' object.id %}" class="btn btn-secondary btn-sm mt-1 mb-1" >Update</a>
+                <a href="{% url 'post-delete' object.id %}" class="btn btn-danger btn-sm mt-1 mb-1" >Delete</a>
+            </div>
+            {% endif %}
+        </div>
+        <h2 class="article-title" style="font-family: 'Franklin Gothic Medium'; text-align: center;">{{ object.hostel_name.upper }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+        <div class="article-specs">
+            <br>
+            <hr>
+            
+            <details>
+            <summary><button type="button" class="btn btn-warning">Food Details</button></summary><br>
+                <p> Breakfast:&nbsp;
+                    {% if object.breakfast %}
+                    <button type="button" class="btn btn-success">Provided</button>
+                    {% else %}
+                    <button type="button" class="btn btn-danger">Not Provided</button>
+                    {% endif %}
+                </p>
+                <p> Lunch:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {% if object.lunch %}
+                    <button type="button" class="btn btn-success">Provided</button>
+                    {% else %}
+                    <button type="button" class="btn btn-danger">Not Provided</button>
+                    {% endif %}
+                </p>
+                <p> Dinner:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {% if object.dinner %}
+                    <button type="button" class="btn btn-success">Provided</button>
+                    {% else %}
+                    <button type="button" class="btn btn-danger">Not Provided</button>
+                    {% endif %}
+                </p>
+            </details>
+            <hr><br>
+            
+            <details>
+                <summary><button type="button" class="btn btn-warning">Utilities Provided</button></summary><br>
+                    <p> Transportation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if object.transportation %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                    <p> CCTV:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if object.cctv %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                    <p> Fridge:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if object.fridge %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                    <p> Washing Machine:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                        {% if object.washing_machine %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                    <p> Geyser:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if object.geyser %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                    <p> AC:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if object.ac %}
+                        <button type="button" class="btn btn-success">Provided</button>
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Not Provided</button>
+                        {% endif %}
+                    </p>
+                </details>
+                <hr><br>
+                <div class="card" style="width :28rem; padding :2rem ; align-self: center; background: #53103c30;">
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Area:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<button type="button" class="btn btn-light">{{ object.area.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-light">{{ object.city.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-light">{{ object.address.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Avg Rating:&nbsp;&nbsp;&nbsp;<button typr="button" class="btn btn-light"> 4<span class="fa fa-star checked"></span></button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Contact:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-light">{{ object.contact }}</button></p>
+                    </div>
+        <br><br>
+        {% if object.author == user %}
+        <a href="{% url 'room-category-create' %}" class="btn btn-primary btn-sm mt-1 mb-1">Add Room Category</a>
+        {% endif %}
+        
+        <br><br>
+    <div class="card" style="width :28rem; padding :2rem ; align-self: center; background: #53103c30;">
+    {% for rc in posts %}
+    <hr>
+    <p class="article-content-a" style="color: #3c1053; font-weight: bold;"> Sharing: <button type="button" class="btn btn-light"> {{ rc.sharing }} </button> </p>
+    <p class="article-content-a" style="color: #3c1053; font-weight: bold;"> Price: <button type="button" class="btn btn-light"> {{ rc.price }} </button></p>
+    <br>
+    {% if object.author == user %}
+        <a href="{% url 'post-room-update' rc.id %}" class="btn btn-secondary btn-sm mt-1 mb-1" width = 10px> UpdateRoom</a>
+        <a href="{% url 'post-room-delete' rc.id %}" class="btn btn-danger btn-sm mt-1 mb-1" > DeleteRoom</a>
+    {% else %}
+        <p class ="btn-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    {% endif %}
+    {% endfor %}
+    </div>
+        </div>
+    </article>
+
+{% endblock content %}
