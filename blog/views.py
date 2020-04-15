@@ -82,7 +82,7 @@ def post_detail_view(request,*args,**kwargs):
     #     query = request.GET.get('q')
     #     submitbutton = request.GET.get('submit')
     #     if query is not None:
-    #         h = Book.objects.get(id=kwargs['pk'])
+    #         h = Post.objects.get(id=kwargs['pk'])
     # p=Post.objects.filter(hostel_name="tirth's home")
     room_cat = RoomCategory.objects.filter(hostel_id=h.id)
     context = {
@@ -160,6 +160,26 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
+class RoomUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = RoomCategory
+    success_url = "/"
+    fields = [
+        "sharing",
+        "price",
+    ]
+    def test_func(self):
+        room_cat = self.get_object()
+        post  = Post.objects.get(pk = room_cat.hostel_id)
+        if self.request.user == post.author:
+            return True
+        return False
+
+class RoomDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = RoomCategory
+    success_url = "/"
+    
+    def test_func(self):
+        return True
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post

@@ -105,9 +105,14 @@
     <p> Sharing: {{ rc.sharing }} </p>
     <p> Price: {{ rc.price }} </p>
     <br>
-
+    {% if object.author == user %}
+    <div>
+        <a href="{% url 'post-room-update' rc.id %}" class="btn btn-secondary btn-sm mt-1 mb-1" >UpdateRoom</a>
+        <a href="{% url 'post-room-delete' rc.id %}" class="btn btn-danger btn-sm mt-1 mb-1" >DeleteRoom</a>
+    </div>
+    {% endif %}
     {% endfor %}
-
+    
 
 
 
