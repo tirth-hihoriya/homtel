@@ -1,10 +1,10 @@
+
 {% extends "blog/base.html" %}
 {% block content %}
-   
-    <article class="media content-section">
+    <article class="media content-section" >
         <img src="{{ object.author.profile.image.url }}" alt="profile_pic" class="rounded-circle article-img">
         <div class="media-body">
-        <div class="article-metadata">
+        <div class="article-metadata"style="text-align: center;">
             <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
 
             <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
@@ -15,10 +15,12 @@
             </div>
             {% endif %}
         </div>
-        <h2 class="article-title">{{ object.hostel_name }}</h2>
+        <h2 class="article-title" style="font-family: 'Franklin Gothic Medium'; text-align: center;">{{ object.hostel_name.upper }}</h2>
         <p class="article-content">{{ object.content }}</p>
         <div class="article-specs">
-            <br><hr>
+            <br>
+            <hr>
+            
             <details>
             <summary><button type="button" class="btn btn-warning">Food Details</button></summary><br>
                 <p> Breakfast:&nbsp;
@@ -44,6 +46,7 @@
                 </p>
             </details>
             <hr><br>
+            
             <details>
                 <summary><button type="button" class="btn btn-warning">Utilities Provided</button></summary><br>
                     <p> Transportation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -90,32 +93,33 @@
                     </p>
                 </details>
                 <hr><br>
-        
-        <p class="article-content">Area:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   <button type="button" class="btn btn-primary">{{ object.area}}</button></p>
-        <p class="article-content">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-secondary">{{ object.city}}</button></p>
-        <p class="article-content">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-light">{{ object.address}}</button></p>
-        <p class="article-content">Avg Rating:&nbsp; <button type="button" class="btn btn-info">4</button></p>
-        <p class="article-content">Contact:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button type="button" class="btn btn-dark"> {{ object.contact }}</button></p>
+                <div class="card" style="width :28rem; padding :2rem ; align-self: center; background: #53103c30;">
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Area:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<button type="button" class="btn btn-light">{{ object.area.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-light">{{ object.city.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-light">{{ object.address.capitalize}}</button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Avg Rating:&nbsp;&nbsp;&nbsp;<button typr="button" class="btn btn-light"> 4<span class="fa fa-star checked"></span></button></p>
+                    <p class="article-content-a" style="color: #3c1053; font-weight: bold;">Contact:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-light">{{ object.contact }}</button></p>
+                    </div>
+        <br><br>
         {% if object.author == user %}
-        <a href="{% url 'room-category-create' %}">New Room Category</a>
+        <a href="{% url 'room-category-create' %}" class="btn btn-primary btn-sm mt-1 mb-1">Add Room Category</a>
         {% endif %}
-
+        
+        <br><br>
+    <div class="card" style="width :28rem; padding :2rem ; align-self: center; background: #53103c30;">
     {% for rc in posts %}
-
-    <p> Sharing: {{ rc.sharing }} </p>
-    <p> Price: {{ rc.price }} </p>
+    <hr>
+    <p class="article-content-a" style="color: #3c1053; font-weight: bold;"> Sharing: <button type="button" class="btn btn-light"> {{ rc.sharing }} </button> </p>
+    <p class="article-content-a" style="color: #3c1053; font-weight: bold;"> Price: <button type="button" class="btn btn-light"> {{ rc.price }} </button></p>
     <br>
     {% if object.author == user %}
-    <div>
-        <a href="{% url 'post-room-update' rc.id %}" class="btn btn-secondary btn-sm mt-1 mb-1" >UpdateRoom</a>
-        <a href="{% url 'post-room-delete' rc.id %}" class="btn btn-danger btn-sm mt-1 mb-1" >DeleteRoom</a>
-    </div>
+        <a href="{% url 'post-room-update' rc.id %}" class="btn btn-secondary btn-sm mt-1 mb-1" width = 10px> UpdateRoom</a>
+        <a href="{% url 'post-room-delete' rc.id %}" class="btn btn-danger btn-sm mt-1 mb-1" > DeleteRoom</a>
+    {% else %}
+        <p class ="btn-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     {% endif %}
     {% endfor %}
-    
-
-
-
+    </div>
         </div>
     </article>
 

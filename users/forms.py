@@ -85,7 +85,10 @@ class UserUpdateForm(forms.ModelForm):
     country = forms.CharField(
         label="Country", widget=forms.Select(choices=COUNTRY_CHOICES)
     )
-
+    user_role = forms.CharField(
+        label="Are you a Seller/Hostel_Owner or a Coustomer/Student?",
+        widget=forms.Select(choices=ROLE_CHOICES),
+    )
     class Meta:
         model = User
         fields = [

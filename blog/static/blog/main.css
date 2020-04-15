@@ -44,6 +44,7 @@ body {
   
   .article-title {
     color: #444444;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   a.article-title:hover {
@@ -54,7 +55,11 @@ body {
   .article-content {
     white-space: pre-line;
   }
-  
+  .article-content-a {
+    white-space: pre-line;
+    color: #3c1053;
+    font-weight: bold;
+  }
   .article-img {
     height: 65px;
     width: 65px;
