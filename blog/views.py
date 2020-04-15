@@ -76,7 +76,7 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by("-date_posted")
 
 
-def post_deatil_view(request,*args,**kwargs):
+def post_detail_view(request,*args,**kwargs):
     h = Post.objects.get(id=kwargs['pk'])
     # if request.method == 'GET':
     #     query = request.GET.get('q')
@@ -84,13 +84,13 @@ def post_deatil_view(request,*args,**kwargs):
     #     if query is not None:
     #         h = Book.objects.get(id=kwargs['pk'])
     # p=Post.objects.filter(hostel_name="tirth's home")
-    room_cat = RoomCategory.objects.filter(hostel_id=kwargs['pk'])
+    room_cat = RoomCategory.objects.filter(hostel_id=h.id)
     context = {
-        'hostel' : h,
-        'rooms' : room_cat
+        'object' : h,
+        'posts' : room_cat
     }
     template_name = "blog/post_detail.html"
-    return render(request,"blog/post_detail.html",context)
+    return render(request, "blog/post_detail.html", context)
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post

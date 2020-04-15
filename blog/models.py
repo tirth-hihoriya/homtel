@@ -56,12 +56,12 @@ class Post(models.Model):
 
 
 class RoomCategory(models.Model):
-    id = models.IntegerField(primary_key=True, default=random.randint(0, 1000))
     hostel = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
     sharing = models.IntegerField(default=1)
     price = models.DecimalField(default=50000.0000, max_digits=12, decimal_places=4)
     
     def __str__(self):
         return f"{self.post.hostel_name}"
+
     def get_absolute_url(self):
-        return reverse("post-detail", kwargs={"sharing": self.sharing})
+        return reverse("")
