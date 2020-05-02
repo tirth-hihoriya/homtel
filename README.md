@@ -32,5 +32,16 @@ Transaction and security are provided. Search request of the user will generate 
 5 .Querying in the opposite direction with related objects
 6. User/Seller authentication
 
+## Glimpse
+
+### View of Home Page
+![homepage](screeenshots/home_page.png)
+### Detailed view of hostel
+![homepage](screeenshots/deatiled_view.png)
+### View of Seller side add hostel / room category
+![homepage](screeenshots/seller_view.png)
+### Search Filters / Queries 
+![homepage](screeenshots/filter.png)
+
  ### Screenshot of your project's schema
 ![schema](project_schema.png)
