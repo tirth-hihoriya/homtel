@@ -34,14 +34,14 @@ Transaction and security are provided. Search request of the user will generate 
 
 ## Glimpse
 
-### View of Home Page
+## View of Home Page
 ![homepage](screeenshots/home_page.png)
-### Detailed view of hostel
+## Detailed view of hostel
 ![homepage](screeenshots/deatiled_view.png)
-### View of Seller side add hostel / room category
+## View of Seller side add hostel / room category
 ![homepage](screeenshots/seller_view.png)
-### Search Filters / Queries 
+## Search Filters / Queries 
 ![homepage](screeenshots/filter.png)
 
- ### Screenshot of your project's schema
+ ## Screenshot of your project's schema
 ![schema](project_schema.png)
