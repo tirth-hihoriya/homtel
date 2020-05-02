@@ -1,7 +1,6 @@
 # HOMTEL
 
 
-
 As we all know Nirma University faces barriers to provide hostels to students of every department, at the time of admissions students face many problems to find a good hostel nearby. 
 We hereby come up with an amazing idea to build a Hostel Information Portal. This Interactive Web application will help students to easily get a hostel of their choice.
 
@@ -35,13 +34,13 @@ Transaction and security are provided. Search request of the user will generate 
 ## Glimpse
 
 ## View of Home Page
-![homepage](screeenshots/home_page.png)
+![homepage](screenshots/home_page.png)
 ## Detailed view of hostel
-![homepage](screeenshots/deatiled_view.png)
+![homepage](screenshots/deatiled_view.png)
 ## View of Seller side add hostel / room category
-![homepage](screeenshots/seller_view.png)
+![homepage](screenshots/seller_view.png)
 ## Search Filters / Queries 
-![homepage](screeenshots/filter.png)
+![homepage](screenshots/filter.png)
 
  ## Screenshot of your project's schema
-![schema](project_schema.png)
+![schema](screenshots/project_schema.png)
